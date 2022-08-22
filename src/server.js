@@ -7,6 +7,6 @@ const app = express();
 app.use(express.json()); //This tells the server it will always send and receive JSON
 app.use(userRouter);
 
-app.listen(5001, ()=> {
-    console.log("listening on port 5001")
+app.listen(5000, ()=> {
+    console.log("listening on port 5000")
 })
