@@ -1,12 +1,14 @@
 require("./db/connection"); //first thing is to run db connection
 const express = require("express");
-const userRouter = require("./user/routes");
+const cors = require("cors");
+const userRouter = require("./user/userRoutes");
 const app = express();
 const serverPort = 5001;
 const port = process.env.PORT || serverPort;
 
 
 //add relevant routes and controllers to app before listen runs
+app.use(cors());
 app.use(express.json()); //This tells the server it will always send and receive JSON
 app.use(userRouter);
 
